@@ -105,6 +105,7 @@
     font-weight: 400;
     outline: none;
     transition: .5s;
+    font-family: "Playfair Display", serif;
 }
 
 .sticky-top.navbar-light .navbar-nav .nav-link {
@@ -146,6 +147,7 @@
     background: var(--bs-light);
     transition: .5s;
     opacity: 1;
+    font-family: "Playfair Display", serif;
 }
 
 @media (max-width: 991.98px) {
