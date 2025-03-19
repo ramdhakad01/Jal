@@ -333,10 +333,7 @@ button {
 }
 
 /* Seller button */
-/* 
-.button-text {
-    display: none;
-} */
+
 
 @media (min-width: 640px) {
     .button-text {
