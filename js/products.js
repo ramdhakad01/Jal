@@ -5,35 +5,35 @@ const products = [
         name: "Water Bottle - 1L",
         description: "Premium quality water bottle with 1L capacity",
         price: 299,
-        image: "img/blog-1.jpg"
+        image: "img/bottle3.jpeg"
     },
     {
         id: 2,
         name: "Water Purifier",
         description: "Advanced water purifier with RO technology",
         price: 12999,
-        image: "img/blog-2.jpg"
+        image: "img/bottle5.jpeg"
     },
     {
         id: 3,
         name: "Water Filter Cartridge",
         description: "Replacement filter cartridge for water purifiers",
         price: 799,
-        image: "img/blog-3.jpg"
+        image: "img/10litter.jpeg"
     },
     {
         id: 4,
         name: "Copper Water Bottle",
         description: "Ayurvedic copper water bottle for health benefits",
         price: 599,
-        image: "img/blog-1.jpg"
+        image: "img/bottle-sum.jpeg"
     },
     {
         id: 1,
         name: "Water Bottle - 1L",
         description: "Premium quality water bottle with 1L capacity",
         price: 299,
-        image: "img/blog-2.jpg"
+        image: "img/acua-bottle1l.jpg"
     },
     {
         id: 2,
@@ -47,14 +47,14 @@ const products = [
         name: "Water Filter Cartridge",
         description: "Replacement filter cartridge for water purifiers",
         price: 799,
-        image: "img/blog-1.jpg"
+        image: "img/bisleri-bottle500.jpeg"
     },
     {
         id: 4,
         name: "Copper Water Bottle",
         description: "Ayurvedic copper water bottle for health benefits",
         price: 599,
-        image: "img/blog-2.jpg"
+        image: "img/acua-bottle2.jpeg"
     }
 ];
 

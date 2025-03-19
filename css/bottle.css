@@ -345,6 +345,7 @@ button {
     display: grid;
     grid-template-columns: 1fr;
     gap: 24px;
+    margin-bottom: 20px;
 }
 
 @media (min-width: 640px) {
