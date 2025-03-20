@@ -16,7 +16,7 @@ if(isset($_POST['login'])) {
         $_SESSION['email'] = $username; // Set session
         echo "<script>
                 alert('Login Successfully!');
-                window.location.href = 'index.php'; // Redirect to homepage
+                window.location.href = 'index.html'; // Redirect to homepage
               </script>";
     } else {
         echo "<script>
