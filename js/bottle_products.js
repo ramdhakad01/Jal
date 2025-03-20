@@ -29,28 +29,28 @@ const products = [
         image: "img/bottle-sum.jpeg"
     },
     {
-        id: 1,
+        id: 5,
         name: "Water Bottle - 1L",
         description: "Premium quality water bottle with 1L capacity",
         price: 299,
         image: "img/acua-bottle1l.jpg"
     },
     {
-        id: 2,
+        id: 6,
         name: "Water Purifier",
         description: "Advanced water purifier with RO technology",
         price: 12999,
         image: "img/blog-3.jpg"
     },
     {
-        id: 3,
+        id: 7,
         name: "Water Filter Cartridge",
         description: "Replacement filter cartridge for water purifiers",
         price: 799,
         image: "img/bisleri-bottle500.jpeg"
     },
     {
-        id: 4,
+        id: 8,
         name: "Copper Water Bottle",
         description: "Ayurvedic copper water bottle for health benefits",
         price: 599,
