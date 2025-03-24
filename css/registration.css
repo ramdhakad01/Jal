@@ -1,0 +1,222 @@
+:root {
+    --primary-color: #2b6c8f;
+    --primary-light: #60a5fa;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --white: #ffffff;
+    --background: #f0f9ff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-image: url('images/background1.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* background: linear-gradient(135deg, #e0f2fe, #a5f3fc); */
+    padding: 0.5rem;
+   
+ 
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.card {
+    background: var(--white);
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    background: var(--primary-color);
+    padding: 2rem;
+    color: var(--white);
+    min-height: 400px;
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: url('/placeholder.svg') center/cover;
+    opacity: 0.2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.droplet-icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+.hero-text {
+    margin-top: 2rem;
+}
+
+.hero-text h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.feature-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+/* Form Section */
+.form-section {
+    padding: 2rem;
+}
+
+.form-header {
+    margin-bottom: 2rem;
+}
+
+.form-header h2 {
+    color: var(--text-dark);
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    color: var(--text-light);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary-light);
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
+}
+
+.button-group {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+}
+
+.button-group.three-cols {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.btn-toggle {
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    background: var(--white);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-toggle.active {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+.form-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #1e3a8a;
+}
+
+.btn-secondary {
+    background: var(--white);
+    border: 1px solid #e5e7eb;
+}
+
+.btn-secondary:hover {
+    background: #f9fafb;
+}
+
+  /* logo style  */
+  .logo{
+    /* width: 50px; Adjust as needed */
+    height: 50px; /* Same as width for a perfect circle */
+    border-radius: 50%; /* Makes it circular */
+    object-fit: cover; /* Ensures the image fills the circle */
+    /* border: 2px solid #3498db; Optional border */
+    }
