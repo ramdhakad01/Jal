@@ -8,7 +8,7 @@
 
 body {
     background: #f6f9fc;
-    display: flex;
+    display:flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
@@ -16,6 +16,7 @@ body {
     height: 100vh;
     background-image:url('images/background1.jpg');
     background-size: cover;
+    overflow: hidden;
 }
 
 h1 {
@@ -97,9 +98,8 @@ input {
     position: relative;
     overflow: hidden;
     width: 800px;
-
     max-width: 1200px;
-    min-height: 75%;
+    min-height: 85%;
 }
 
 .form-container {
@@ -217,7 +217,6 @@ input {
 @media (max-width: 768px) {
     .container {
         min-height: 800px;
-/* add element */
         border-radius: 10px;
         box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
         position: relative;
@@ -265,7 +264,7 @@ input {
         transform: translateY(0);
     }
 
-    .container.right-panel-active .overlay-right {
+    .container.right-panel-active .overlay-right{
         transform: translateY(20%);
     }
 }
@@ -294,3 +293,35 @@ input:focus {
     border-color: var(--primary-light);
     box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.2);
 }
+
+/* otp */
+
+.otp-container {
+    display: flex;
+    align-items: center;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 8px; */
+    overflow: hidden;
+    width: auto;
+  }
+  
+  .otp-input {
+    flex: 1;
+    padding:auto;
+    border: none;
+    outline: none;
+  }
+  
+  .otp-button {
+    background-color: #0d77e9de;
+    color: white;
+    padding: 12px 6px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+  
+  
+  .otp-button:hover {
+    background-color: #0056b3;
+  }

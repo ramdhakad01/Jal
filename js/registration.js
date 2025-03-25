@@ -62,3 +62,38 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+//otp statement
+
+function sendotptoggle(){
+    document.getElementById("otp").style.display="block";
+    document.getElementById("verify").style.display="block";
+    document.getElementById("sendotp").style.display="none";
+}
+function sendotptoggle_number(){
+    document.getElementById("otp_number").style.display="block";
+    document.getElementById("verify_number").style.display="block";
+    document.getElementById("sendotp_number").style.display="none";
+}
+
+    // function send_otp() {
+    //     let email = document.getElementById("email").value;
+
+    //     if (email === "") {
+    //         alert("Please enter an email first");
+    //         return;
+    //     }
+
+    //     let xhr = new XMLHttpRequest();
+    //     xhr.open("POST", "send_otp.php", true);
+    //     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    //     xhr.onreadystatechange = function () {
+    //         if (xhr.readyState === 4 && xhr.status === 200) {
+    //             document.getElementById("otpResponse").innerText = xhr.responseText;
+    //         }
+    //     };
+
+    //     xhr.send("email=" + email);
+    // }
+

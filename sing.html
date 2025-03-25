@@ -62,6 +62,7 @@
 </html> -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -69,6 +70,7 @@
     <link rel="stylesheet" href="css/sing.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+
 <body>
     <div class="container" id="container">
         <!-- Sign Up Form -->
@@ -81,10 +83,26 @@
                     <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
                 </div>
                 <span>or use your email for registration</span>
-            
+
                 <input type="text" name="name" placeholder="Enter your full name" required>
-                <input type="email" name="email" placeholder="Enter your email" required>
-                <input type="tel" name="phone" placeholder="Enter your phone number" required>
+                <div class="otp-container">
+                    <input class="otp-input" type="email" name="email" placeholder="Enter your email" required>
+                    <button class="otp-button" type="button" id="sendotp" onclick="sendotptoggle()"
+                        style="display:block;">send otp</button>
+                    <input class="otp-input" type="number" name="otp" id="otp" placeholder="Enter OTP"
+                        style="display:none;">
+                    <button class="otp-button" type="button" id="verify" onclick="verifytoggle_email()"
+                        style="display:none;">verify</button>
+                </div>
+                <div class="otp-container">
+                    <input class="otp-input" type="number" name="phone" placeholder="Enter phone number" required>
+                    <button class="otp-button" type="button" id="sendotp_number" onclick="sendotptoggle_number()"
+                        style="display:block;">send otp</button>
+                    <input class="otp-input" type="number" name="otp" id="otp_number" placeholder="Enter OTP"
+                        style="display:none;">
+                    <button class="otp-button" type="button" id="verify_number" onclick="verifytoggle_number()"
+                        style="display:none;">verify</button>
+                </div>
                 <input type="text" name="address" placeholder="Enter your address" required>
                 <input type="password" name="password" placeholder="Enter your password" required>
                 <button type="submit" name="submit">Sign Up</button>
@@ -139,6 +157,19 @@
     signInButton.addEventListener("click", () => {
         container.classList.remove("right-panel-active");
     });
+
+
+    //otp statement
+    function sendotptoggle() {
+        document.getElementById("otp").style.display = "block";
+        document.getElementById("verify").style.display = "block";
+        document.getElementById("sendotp").style.display = "none";
+    }
+    function sendotptoggle_number() {
+        document.getElementById("otp_number").style.display = "block";
+        document.getElementById("verify_number").style.display = "block";
+        document.getElementById("sendotp_number").style.display = "none";
+    }
 </script>
 
 </html>

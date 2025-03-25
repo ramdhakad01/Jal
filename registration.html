@@ -43,20 +43,29 @@
                         <p>Sign up for our water services</p>
                     </div>
 
-                    <form id="registrationForm">
+                    <form id="registrationForm" action="">
                         <div class="form-group">
                             <label>Full Name</label>
                             <input type="text" name="name" placeholder="Enter your full name" required>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group " >
                             <label>Email</label>
-                            <input type="email" name="email" placeholder="Enter your email" required>
+                            <div class="email-otp-container">
+                            <input class="email-input" type="email" name="email" placeholder="Enter your email" required>
+                            <button class="otp-button" type="button" id="sendotp" onclick="sendotptoggle()"style="display:block;">send otp</button>
+                            <input class="email-input" type="number" name="otp" id="otp" placeholder="Enter OTP" style="display:none;">
+                            <button class="otp-button"  type="button" id="verify" onclick="send_otp()"style="display:none;">verify</button>
                         </div>
-
+                    </div>
                         <div class="form-group">
                             <label>Phone</label>
-                            <input type="tel" name="phone" placeholder="Enter your phone number" required>
+                            <div class="email-otp-container">
+                            <input class="email-input" type="tel" name="phone" placeholder="Enter your phone number" required>
+                            <button class="otp-button" type="button" id="sendotp_number" onclick="sendotptoggle_number()"style="display:block;">send otp</button>
+                            <input class="email-input" type="number" name="otp" id="otp_number" placeholder="Enter OTP" style="display:none;">
+                            <button class="otp-button"  type="button" id="verify_number" onclick="send_otp()"style="display:none;">verify</button>
+                        </div>
                         </div>
 
                         <div class="form-group">
