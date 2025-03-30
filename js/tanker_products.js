@@ -19,7 +19,7 @@ const products = [
         name: "Water Filter Cartridge",
         description: "Replacement filter cartridge for water purifiers",
         price: 799,
-        image: "img/water-tractor.webp"
+        image: "img/watersupplytanker.jpg"
     },
     {
         id: 24,
@@ -40,7 +40,7 @@ const products = [
         name: "Water Purifier",
         description: "Advanced water purifier with RO technology",
         price: 12999,
-        image: "img/tractor-water-tanker-2.webp"
+        image: "img/watersupplytanker1.webp"
     },
     {
         id: 27,
