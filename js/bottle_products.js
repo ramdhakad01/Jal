@@ -40,7 +40,7 @@ const products = [
         name: "Water Purifier",
         description: "Advanced water purifier with RO technology",
         price: 12999,
-        image: "img/blog-3.jpg"
+        image: "img/bottle1.jpg"
     },
     {
         id: 7,
