@@ -3,7 +3,7 @@
 session_start(); // Start the session
 include("confige.php");
 
-if(isset($_POST['login'])) {
+if(isset($_POST['submit'])) {
     $username = mysqli_real_escape_string($conn, $_POST['email']);
     $pwd = mysqli_real_escape_string($conn, $_POST['password']);
 
@@ -16,7 +16,7 @@ if(isset($_POST['login'])) {
         $_SESSION['email'] = $username; // Set session
         echo "<script>
                 alert('Login Successfully!');
-                window.location.href = 'index.html'; // Redirect to homepage
+                window.location.href = 'index.php'; // Redirect to homepage
               </script>";
     } else {
         echo "<script>

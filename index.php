@@ -1,3 +1,13 @@
+<?php
+session_start(); // Start the session
+
+// Check if session exists (user is logged in)
+if (!isset($_SESSION['email'])) {
+    header("Location: sing.html"); // Redirect to login page if not logged in
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
