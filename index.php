@@ -88,8 +88,8 @@ if (!isset($_SESSION['email'])) {
         
     <?php else: ?>
         <p>Welcome, Guest!</p>
-        <a href="login.php">Login</a>
-    <?php endif; ?>
+        <a href="login.php">Please login</a>
+    <?php endif;?>
 
 
 
