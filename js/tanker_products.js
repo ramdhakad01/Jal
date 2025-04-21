@@ -2,58 +2,58 @@
 const products = [
     {
         id: 21,
-        name: "Water Bottle - 1L",
-        description: "Premium quality water bottle with 1L capacity",
+        name: "Water Tanker 4000 L ",
+        description: "Premium quality water Tanker  with 4000L capacity",
         price: 299,
         image: "img/tractor-tanker3.jpg"
     },
     {
         id: 22,
-        name: "Water Purifier",
-        description: "Advanced water purifier with RO technology",
-        price: 12999,
+        name: "Water Tanker 6000L ",
+        description: "Advanced  purified water with RO technology with 6000 L ",
+        price: 699,
         image: "img/tanker1.jpeg"
     },
     {
         id: 23,
-        name: "Water Filter Cartridge",
-        description: "Replacement filter cartridge for water purifiers",
-        price: 799,
+        name: "Water Tanker 5000 L",
+        description: "Advanced  purified water With Ro Technology  ",
+        price: 499,
         image: "img/watersupplytanker.jpg"
     },
     {
         id: 24,
-        name: "Copper Water Bottle",
-        description: "Ayurvedic copper water bottle for health benefits",
+        name: "Water Tanker with 5000 L ",
+        description: " 5000 L Capacity best Water Tanker .......",
         price: 599,
         image: "img/tractor-water-tanker-2.webp"
     },
     {
         id: 25,
-        name: "Water Bottle - 1L",
-        description: "Premium quality water bottle with 1L capacity",
-        price: 299,
+        name: "Water Tanker  - 10000L",
+        description: "Premium quality water Tanker  with 10000L capacity",
+        price: 999,
         image: "img/tanker2.jpeg"
     },
     {
         id: 26,
-        name: "Water Purifier",
-        description: "Advanced water purifier with RO technology",
-        price: 12999,
+        name: "Water Tanker with 300 L ",
+        description: "Advanced  purified water with RO technology",
+        price: 249,
         image: "img/watersupplytanker1.webp"
     },
     {
         id: 27,
-        name: "Water Filter Cartridge",
-        description: "Replacement filter cartridge for water purifiers",
-        price: 799,
+        name: "Water Tanker with 5000L",
+        description: "Comes with 5000L Capcity with Ro Technology Based ",
+        price: 699,
         image: "img/Tractor-Water.jpg"
     },
     {
         id: 28,
-        name: "Copper Water Bottle",
-        description: "Ayurvedic copper water bottle for health benefits",
-        price: 599,
+        name: "Water Tanker 10000 L",
+        description: "Best For  HomesConstructions sides .......... ",
+        price: 999,
         image: "img/water-tanker2.webp"
     }
 ];

@@ -2,58 +2,58 @@
 const camper_products = [
     {
         id: 11,
-        name: "Water Bottle - 1L",
-        description: "Premium quality water bottle with 1L capacity",
-        price: 299,
+        name: "Water Camper  - 15L",
+        description: "Premium quality water Camper  with 15L capacity",
+        price: 40,
         image: "img/camper1.jpeg"
     },
     {
         id: 12,
-        name: "Water Purifier",
+        name: "Sherya Water camper",
         description: "Advanced water purifier with RO technology",
-        price: 12999,
+        price: 35,
         image: "img/camper2.jpeg"
     },
     {
         id: 13,
-        name: "Water Filter Cartridge",
-        description: "Replacement filter cartridge for water purifiers",
-        price: 799,
+        name: "Shree ganesh Water Camper 20L",
+        description: "Advanced RO technology",
+        price: 50,
         image: "img/camper3.jpeg"
     },
     {
         id: 14,
-        name: "Copper Water Bottle",
+        name: "Nil dhara 2x Combo  20 L",
         description: "Ayurvedic copper water bottle for health benefits",
-        price: 599,
+        price: 50,
         image: "img/2camper1.jpeg"
     },
     {
         id: 15,
-        name: "Water Bottle - 1L",
-        description: "Premium quality water bottle with 1L capacity",
-        price: 299,
+        name: "Water Camper 4X 15 L",
+        description: "Premium quality water Camper  with 15L capacity",
+        price: 189,
         image: "img/4camper.jpg"
     },
     {
         id: 16,
-        name: "Water Purifier",
+        name: "Water Camper 5x 15 L",
         description: "Advanced water purifier with RO technology",
-        price: 12999,
+        price: 199,
         image: "img/5camper.webp"
     },
     {
         id: 17,
-        name: "Water Filter Cartridge",
-        description: "Replacement filter cartridge for water purifiers",
-        price: 799,
+        name: "Bisleri Water Camper ",
+        description: "Added with menirals and Ro Techonology ",
+        price: 49,
         image: "img/20-litre-bisleri-water-camper.webp"
     },
     {
         id: 18,
-        name: "Copper Water Bottle",
-        description: "Ayurvedic copper water bottle for health benefits",
-        price: 599,
+        name: "Jaldhara",
+        description: "Water Camper in 15 L with 2X purify Water ",
+        price: 30,
         image: "img/camper1.jpeg"
     }
 ];

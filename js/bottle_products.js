@@ -2,58 +2,58 @@
 const products = [
     {
         id: 1,
-        name: "Water Bottle - 1L",
+        name: "Water Bottle - 1L 3x Combo",
         description: "Premium quality water bottle with 1L capacity",
-        price: 299,
+        price: 49,
         image: "img/bottle3.jpeg"
     },
     {
         id: 2,
-        name: "Water Purifier",
-        description: "Advanced water purifier with RO technology",
-        price: 12999,
+        name: "Water Bottle - 1L 5x Combo",
+        description: "Premium copper water bottle ...........",
+        price: 99,
         image: "img/bottle5.jpeg"
     },
     {
         id: 3,
-        name: "Water Filter Cartridge",
-        description: "Replacement filter cartridge for water purifiers",
-        price: 799,
+        name: "Water Filter 20l",
+        description: "5 L Bisleri Water Bottle........................",
+        price: 170,
         image: "img/10litter.jpeg"
     },
     {
         id: 4,
-        name: "Copper Water Bottle",
+        name:  "Water Filter 5l",
         description: "Ayurvedic copper water bottle for health benefits",
-        price: 599,
+        price: 30,
         image: "img/bottle-sum.jpeg"
     },
     {
         id: 5,
         name: "Water Bottle - 1L",
         description: "Premium quality water bottle with 1L capacity",
-        price: 299,
+        price: 15,
         image: "img/acua-bottle1l.jpg"
     },
     {
         id: 6,
-        name: "Water Purifier",
-        description: "Advanced water purifier with RO technology",
-        price: 12999,
+        name: "Tata Water Plus ",
+        description: "With Copper Based........................ ........................",
+        price: 20,
         image: "img/bottle1.jpg"
     },
     {
         id: 7,
-        name: "Water Filter Cartridge",
-        description: "Replacement filter cartridge for water purifiers",
-        price: 799,
+        name: "Bisleri 500ml",
+        description: "Bisleri Small bottle ........................ ........................",
+        price: 8,
         image: "img/bisleri-bottle500.jpeg"
     },
     {
         id: 8,
-        name: "Copper Water Bottle",
+        name: "Aqua Water Bottle 500 ml",
         description: "Ayurvedic copper water bottle for health benefits",
-        price: 599,
+        price: 7,
         image: "img/acua-bottle2.jpeg"
     }
 ];

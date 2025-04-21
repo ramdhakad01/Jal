@@ -10,7 +10,7 @@ if (!isset($_SESSION['email'])) {
 
 <!DOCTYPE html>
 <html lang="en">
-
+ 
 <head>
     <meta charset="utf-8">
     <title>Jal Wala</title>
@@ -82,7 +82,18 @@ if (!isset($_SESSION['email'])) {
                         <!-- <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a> -->
                         <button class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
                             <i class="fas fa-user"></i>
-                            <span class="dropdown-text">Guest</span>
+                            
+                            <?php if (isset($_SESSION["email"])): ?>
+         <?php echo htmlspecialchars($_SESSION["email"]); ?>
+        
+    <?php else: ?>
+        <p>Welcome, Guest!</p>
+        <a href="login.php">Please login</a>
+    <?php endif;?>
+
+
+
+                            </span>
                         </button>
                         <div class="dropdown-menu m-0">
                             <a href="profile.php">Profile</a>
