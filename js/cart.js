@@ -24,12 +24,10 @@ function saveCart() {
 // Add item to cart
 function addToCart(product) {
     const existingItemIndex = cart.findIndex(item => item.id === product.id);
-    
+
     if (existingItemIndex >= 0) {
-        // Item already exists, update quantity
         cart[existingItemIndex].quantity += 1;
     } else {
-        // Add new item
         cart.push({
             id: product.id,
             name: product.name,
@@ -38,15 +36,11 @@ function addToCart(product) {
             image: product.image
         });
     }
-    
+
     saveCart();
     updateCartCount();
     renderCart();
-    
-    // Show cart dropdown
     toggleCart(true);
-    
-    // Show notification
     showNotification(`${product.name} added to cart!`);
 }
 
@@ -61,16 +55,13 @@ function removeFromCart(productId) {
 // Update item quantity
 function updateQuantity(productId, quantity) {
     const itemIndex = cart.findIndex(item => item.id === productId);
-    
+
     if (itemIndex >= 0) {
         cart[itemIndex].quantity = quantity;
-        
-        // Remove item if quantity is 0
         if (quantity <= 0) {
             removeFromCart(productId);
             return;
         }
-        
         saveCart();
         renderCart();
     }
@@ -93,9 +84,9 @@ function calculateCartTotal() {
 function updateCartCount() {
     const cartCount = document.getElementById('cartCount');
     const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
-    
+
     cartCount.textContent = totalItems;
-    
+
     if (totalItems > 0) {
         cartCount.style.display = 'flex';
     } else {
@@ -106,13 +97,13 @@ function updateCartCount() {
 // Toggle cart dropdown
 function toggleCart(forceOpen = null) {
     const cartMenu = document.getElementById('cartMenu');
-    
+
     if (forceOpen !== null) {
         isCartOpen = forceOpen;
     } else {
         isCartOpen = !isCartOpen;
     }
-    
+
     if (isCartOpen) {
         cartMenu.style.display = 'block';
         renderCart();
@@ -129,7 +120,7 @@ function formatPrice(price) {
 // Render cart contents
 function renderCart() {
     const cartMenu = document.getElementById('cartMenu');
-    
+
     let cartHTML = `
         <div class="cart-header">
             <h3>Shopping Cart (${cart.length})</h3>
@@ -138,7 +129,7 @@ function renderCart() {
             </button>
         </div>
     `;
-    
+
     if (cart.length === 0) {
         cartHTML += `
             <div class="cart-empty">
@@ -147,7 +138,7 @@ function renderCart() {
         `;
     } else {
         cartHTML += `<div class="cart-items">`;
-        
+
         cart.forEach(item => {
             cartHTML += `
                 <div class="cart-item">
@@ -176,11 +167,11 @@ function renderCart() {
                 </div>
             `;
         });
-        
+
         cartHTML += `</div>`;
-        
+
         const cartTotal = calculateCartTotal();
-        
+
         cartHTML += `
             <div class="cart-footer">
                 <div class="cart-subtotal">
@@ -188,25 +179,20 @@ function renderCart() {
                     <span class="cart-subtotal-value">${formatPrice(cartTotal)}</span>
                 </div>
                 <div class="cart-actions">
-<<<<<<< Updated upstream
-                   <a href="order.html" onclick="goToCheckout()" class="btn btn-primary" style="width: 100%;">Checkout</a>
-=======
-                    <a href="drinking-water/order.html" class="btn btn-primary" style="width: 100%;">Checkout</a>
->>>>>>> Stashed changes
+                   <a href="#" onclick="goToCheckout()" class="btn btn-primary" style="width: 100%;">Checkout</a>
                     <button class="btn btn-outline" style="width: 100%;" onclick="clearCart()">Clear Cart</button>
                 </div>
             </div>
         `;
     }
-    
+
     cartMenu.innerHTML = cartHTML;
 }
 
 // Show notification
 function showNotification(message) {
-    // Create notification element if it doesn't exist
     let notification = document.getElementById('notification');
-    
+
     if (!notification) {
         notification = document.createElement('div');
         notification.id = 'notification';
@@ -222,16 +208,14 @@ function showNotification(message) {
         notification.style.transition = 'transform 0.3s, opacity 0.3s';
         notification.style.transform = 'translateY(100px)';
         notification.style.opacity = '0';
-        
+
         document.body.appendChild(notification);
     }
-    
-    // Set message and show notification
+
     notification.textContent = message;
     notification.style.transform = 'translateY(0)';
     notification.style.opacity = '1';
-    
-    // Hide notification after 3 seconds
+
     setTimeout(() => {
         notification.style.transform = 'translateY(100px)';
         notification.style.opacity = '0';
@@ -241,23 +225,30 @@ function showNotification(message) {
 // Initialize cart when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     loadCart();
-    
-    // Add event listener to cart button
+
     const cartButton = document.getElementById('cartButton');
     cartButton.addEventListener('click', function(e) {
         e.preventDefault();
         toggleCart();
     });
-    
-    // Close cart when clicking outside
+
     document.addEventListener('click', function(e) {
         const cartMenu = document.getElementById('cartMenu');
         const cartButton = document.getElementById('cartButton');
-        
+
         if (isCartOpen && !cartMenu.contains(e.target) && e.target !== cartButton && !cartButton.contains(e.target)) {
             toggleCart(false);
         }
     });
 });
 // cart.js में 590–600 लाइन के बीच add करें
+
+function goToCheckout() {
+    const cartTotal = calculateCartTotal();
+    if (cartTotal <= 0) {
+        alert("Cart खाली है। पहले कुछ आइटम्स जोड़ें।");
+        return;
+    }
+    window.location.href = `checkout.php?total=${cartTotal.toFixed(2)}`;
+}
 
