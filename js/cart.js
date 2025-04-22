@@ -188,7 +188,7 @@ function renderCart() {
                     <span class="cart-subtotal-value">${formatPrice(cartTotal)}</span>
                 </div>
                 <div class="cart-actions">
-                   <a href="#" onclick="goToCheckout()" class="btn btn-primary" style="width: 100%;">Checkout</a>
+                   <a href="order.html" onclick="goToCheckout()" class="btn btn-primary" style="width: 100%;">Checkout</a>
                     <button class="btn btn-outline" style="width: 100%;" onclick="clearCart()">Clear Cart</button>
                 </div>
             </div>
@@ -256,13 +256,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 // cart.js में 590–600 लाइन के बीच add करें
-
-function goToCheckout() {
-    const cartTotal = calculateCartTotal();
-    if (cartTotal <= 0) {
-        alert("Cart खाली है। पहले कुछ आइटम्स जोड़ें।");
-        return;
-    }
-    window.location.href = `checkout.php?total=${cartTotal.toFixed(2)}`;
-}
 
