@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Jasyatra-Payment</title>
+	<link rel="stylesheet" type="text/css" href="travel1.css">
+	<link rel="icon" href="Images/jy.jpeg" type="image/x-icon">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7fcfd;
+      padding: 40px 20px;
+    }
+
+    .payment-container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h2 {
+      color: #cc0000;
+      margin-bottom: 24px;
+    }
+
+    .qr-box {
+      padding: 20px;
+      background: #e0f7f9;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+
+    .btn-confirm {
+      background: #cc0000;
+      color: white;
+      padding: 14px 28px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn-confirm:hover {
+      background: #a50000;
+    }
+  </style>
+</head>
+<body>
+
+<div class="payment-container">
+  <h2>Complete Your Payment</h2>
+  <p>Please scan the QR code below to complete your booking.</p>
+
+  <div class="qr-box">
+    <img src="img/qr code.jpg" alt="QR Code" width="200" />
+    <p><strong>UPI ID:</strong>jasyatra@upi</p>
+  </div>
+
+  <p>Total Amount: ₹<strong id="priceDisplay">...</strong></p>
+
+  <button class="btn-confirm" onclick="confirmSuccess()">Confirm Payment</button>
+</div>
+<script>
+    // Get price from local storage and display it
+    const totalPrice = localStorage.getItem("totalPrice");
+    document.getElementById("priceDisplay").innerText = totalPrice ? totalPrice : "0";
+  </script>
+<script>
+  function confirmSuccess() {
+    alert("✅ Payment successful! Your Package booking is confirmed.");
+    window.location.href = "travel1.html"; // optional final page
+  }
+</script>
+
+</body>
+</html>
