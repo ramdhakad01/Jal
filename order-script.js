@@ -17,11 +17,10 @@ const orderData = {
     paymentMethod: "cod",
     items: [
       {
-        name: "Aerodynamic linen bag",
+        name: "Acus bottle",
         price: 179,
         quantity: 1,
-        image:
-          "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-04-22%20093143-qbUvAMm5hd946CY1bRiCAeqmdsj9AF.png",
+        image:"img\acua-bottle1l.jpg",
       },
     ],
     shippingCost: 0,
@@ -182,7 +181,7 @@ const orderData = {
   
     // Update shipping cost based on delivery method
     if (orderData.deliveryMethod === "express") {
-      orderData.shippingCost = 10
+      orderData.shippingCost = 40
     } else {
       orderData.shippingCost = 0
     }
@@ -214,7 +213,7 @@ const orderData = {
     // Calculate subtotal based on item quantity
     const itemPrice = orderData.items[0].price
     const quantity = orderData.items[0].quantity
-    const subtotal = itemPrice * quantity
+    const subtotal = CartTotal
   
     // Update order data
     orderData.subtotal = subtotal
@@ -245,4 +244,67 @@ const orderData = {
     // Redirect to order success page
     window.location.href = "order-success.html"
   }
+
+
+
+
+  
+  function renderOrderSummary() {
+    const app = document.getElementById('app');
+
+    if (!app) return;
+
+    if (cart.length === 0) {
+        app.innerHTML = `<h2>Your order summary is empty!</h2>`;
+        return;
+    }
+
+    let total = 0;
+    let summaryHTML = `
+        <div class="order-summary">
+            <h2>ORDER DETAILS</h2>
+    `;
+
+    cart.forEach(item => {
+        total += item.price * item.quantity;
+        summaryHTML += `
+            <div class="product-item">
+                <div class="product-image">
+                    <img src="${item.image}" alt="${item.name}" id="product-image">
+                </div>
+                <div class="product-details">
+                    <div class="product-name">${item.name}</div>
+                    <div class="product-quantity">
+                        <button class="quantity-btn" onclick="updateQuantity(${item.id}, ${item.quantity - 1})">-</button>
+                        <input type="text" value="${item.quantity}" readonly>
+                        <button class="quantity-btn" onclick="updateQuantity(${item.id}, ${item.quantity + 1})">+</button>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
+
+    summaryHTML += `
+            <div class="coupon-section">
+                <div class="coupon-input">
+                    <span class="coupon-icon">🔵</span>
+                    <input type="text" placeholder="Apply coupon code" id="coupon-code">
+                </div>
+            </div>
+            <div class="price-summary">
+                <div class="price-row">
+                    <span>Shipping</span>
+                    <span id="shipping-cost">₹0</span>
+                </div>
+                <div class="price-row total">
+                    <span>Sub-total</span>
+                    <span id="sub-total">₹${formatPrice(cartTotal)}</span>
+                </div>
+            </div>
+        </div>
+    `;
+
+    app.innerHTML = summaryHTML;
+}
+
   

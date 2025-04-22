@@ -170,7 +170,7 @@ function renderCart() {
 
         cartHTML += `</div>`;
 
-        const cartTotal = calculateCartTotal();
+        var cartTotal = calculateCartTotal();
 
         cartHTML += `
             <div class="cart-footer">
@@ -240,6 +240,12 @@ document.addEventListener('DOMContentLoaded', function() {
             toggleCart(false);
         }
     });
+
+    //order
+    document.addEventListener('DOMContentLoaded', function() {
+    loadCart();
+    renderOrderSummary();
+});
 });
 // cart.js में 590–600 लाइन के बीच add करें
 

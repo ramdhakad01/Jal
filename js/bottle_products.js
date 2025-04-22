@@ -23,37 +23,37 @@ const products = [
     },
     {
         id: 4,
-        name:  "Water Filter 5l",
+        name:  "Water Filter 5l X2",
         description: "Ayurvedic copper water bottle for health benefits",
-        price: 30,
+        price: 65,
         image: "img/bottle-sum.jpeg"
     },
     {
         id: 5,
-        name: "Water Bottle - 1L",
+        name: "Water Bottle - 1L X5",
         description: "Premium quality water bottle with 1L capacity",
-        price: 15,
+        price: 79,
         image: "img/acua-bottle1l.jpg"
     },
     {
         id: 6,
-        name: "Tata Water Plus ",
+        name: "Tata Water Plus 1l X5",
         description: "With Copper Based........................ ........................",
-        price: 20,
+        price: 99,
         image: "img/bottle1.jpg"
     },
     {
         id: 7,
-        name: "Bisleri 500ml",
+        name: "Bisleri 500ml X10",
         description: "Bisleri Small bottle ........................ ........................",
-        price: 8,
+        price: 80,
         image: "img/bisleri-bottle500.jpeg"
     },
     {
         id: 8,
-        name: "Aqua Water Bottle 500 ml",
+        name: "Aqua Water Bottle 500ml X5",
         description: "Ayurvedic copper water bottle for health benefits",
-        price: 7,
+        price: 35,
         image: "img/acua-bottle2.jpeg"
     }
 ];

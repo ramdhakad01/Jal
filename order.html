@@ -83,9 +83,10 @@
                             <div class="select-wrapper">
                                 <select id="state">
                                     <option value="" disabled selected>State</option>
+                                    <option value="Delhi">Indore</option>
                                     <option value="Delhi">Delhi</option>
                                     <option value="Maharashtra">Maharashtra</option>
-                                    <option value="Karnataka">Karnataka</option>
+                                    <option value="Karnataka">Dewas</option>
                                 </select>
                             </div>
                         </div>
@@ -95,7 +96,6 @@
                                     <option value="" disabled selected>Country</option>
                                     <option value="India">India</option>
                                     <option value="USA">USA</option>
-                                    <option value="UK">UK</option>
                                 </select>
                             </div>
                         </div>
@@ -134,7 +134,7 @@
                                     <span class="radio-checkmark"></span>
                                     <div class="delivery-option-details">
                                         <span class="delivery-option-name">Express Delivery</span>
-                                        <span class="delivery-option-price">$10</span>
+                                        <span class="delivery-option-price">₹50</span>
                                     </div>
                                 </label>
                             </div>
@@ -162,7 +162,7 @@
                                 <label class="radio-container">
                                     <input type="radio" name="payment-method" value="cup">
                                     <span class="radio-checkmark"></span>
-                                    Cash upon delivery
+                                    UPI 
                                 </label>
                             </div>
                         </div>
@@ -175,39 +175,10 @@
         </div>
 
         <div class="order-summary">
-            <h2>ORDER DETAILS</h2>
-            <div class="product-item">
-                <div class="product-image">
-                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-04-22%20093143-qbUvAMm5hd946CY1bRiCAeqmdsj9AF.png" alt="Product" id="product-image">
-                </div>
-                <div class="product-details">
-                    <div class="product-name">Aerodynamic linen bag</div>
-                    <div class="product-quantity">
-                        <button class="quantity-btn" onclick="updateQuantity('decrease')">-</button>
-                        <input type="text" value="1" id="quantity" readonly>
-                        <button class="quantity-btn" onclick="updateQuantity('increase')">+</button>
-                    </div>
-                </div>
-            </div>
-            <div class="coupon-section">
-                <div class="coupon-input">
-                    <span class="coupon-icon">🔵</span>
-                    <input type="text" placeholder="Apply coupon code" id="coupon-code">
-                </div>
-            </div>
-            <div class="price-summary">
-                <div class="price-row">
-                    <span>Shipping</span>
-                    <span id="shipping-cost">$0</span>
-                </div>
-                <div class="price-row total">
-                    <span>Sub-total</span>
-                    <span id="sub-total">$179</span>
-                </div>
-            </div>
-        </div>
+            <div id="app"></div>
     </div>
 
+    <script src="js/cart.js"></script>
     <script src="order-script.js"></script>
 </body>
 </html>
