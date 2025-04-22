@@ -97,7 +97,7 @@ if (!isset($_SESSION['email'])) {
                         </button>
                         <div class="dropdown-menu m-0">
                             <a href="profile.php">Profile</a>
-                            <a href="orders.php">Orders</a>
+                            <a href="order.html">Orders</a>
                             <a href="wishlist.php">Wishlist</a>
                             <div class="dropdown-divider"></div>
                             <a href="logout.php">Logout</a>

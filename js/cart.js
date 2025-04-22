@@ -179,7 +179,7 @@ function renderCart() {
                     <span class="cart-subtotal-value">${formatPrice(cartTotal)}</span>
                 </div>
                 <div class="cart-actions">
-                   <a href="#" onclick="goToCheckout()" class="btn btn-primary" style="width: 100%;">Checkout</a>
+                   <a href="order.html" onclick="goToCheckout()" class="btn btn-primary" style="width: 100%;">Checkout</a>
                     <button class="btn btn-outline" style="width: 100%;" onclick="clearCart()">Clear Cart</button>
                 </div>
             </div>
