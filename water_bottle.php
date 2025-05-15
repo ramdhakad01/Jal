@@ -1,3 +1,12 @@
+<?php
+session_start(); // Start the session
+
+// Check if session exists (user is logged in)
+if (!isset($_SESSION['email'])) {
+    header("Location: index.html"); // Redirect to login page if not logged in
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +53,7 @@
         </div>
     </div>
     <!-- Spinner End -->
-
+    
     <!-- Navbar & Hero Start -->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
@@ -58,30 +67,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="index.php" class="nav-item nav-link">Home</a>
-                    <a href="water_bottle.html" class="nav-item nav-link">Water Bottles</a>
-                    <a href="water_camper.html" class="nav-item nav-link active">Water Campers</a>
-                    <a href="water_tanker.html" class="nav-item nav-link">Water Tankers</a>
+                    <a href="index.php" class="nav-item nav-link ">Home</a>
+                    <a href="water_bottle.php" class="nav-item nav-link active">Water Bottles</a>
+                    <a href="water_camper.php" class="nav-item nav-link">Water Campers</a>
+                    <a href="water_tanker.php" class="nav-item nav-link">Water Tankers</a>
 
-                    <a href="become-seller.php" class=" nav-item nav-link">
+                    <a href="registration.html" class=" nav-item nav-link">
                         <i class="fas fa-store"></i>
                         <span>Become a Seller</span>
                     </a>
 
-                    <div class="nav-item dropdown">
-                        <!-- <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a> -->
-                        <button class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
-                            <i class="fas fa-user"></i>
-                            <span class="dropdown-text">Guest</span>
-                        </button>
-                        <div class="dropdown-menu m-0">
-                            <a href="profile.php">Profile</a>
-                            <a href="orders.php">Orders</a>
-                            <a href="wishlist.php">Wishlist</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="logout.php">Logout</a>
-                        </div>
-                    </div>
+
 
                     <div class="nav-item dropdown cart-dropdown ">
                         <button class="dropdown-toggle nav-link" id="cartButton">
@@ -107,19 +103,43 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle me-3"
+             
+
+                <div class="nav-item dropdown">
+                    <button style="color: white;" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                        <i class="fas fa-user"></i>
+
+                        <?php if (isset($_SESSION["email"])): ?>
+                            <?php echo htmlspecialchars($_SESSION["email"]); ?>
+
+                        <?php else: ?>
+                            <p>Welcome, Guest!</p>
+                            <a href="login.php">Please login</a>
+                        <?php endif; ?>
+
+
+
+                        </span>
+                    </button>
+                    <div class="dropdown-menu m-0">
+                        <a href="profile.php">Profile</a>
+                        <a href="order.html">Orders</a>
+                        <a href="wishlist.php">Wishlist</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="logout.php">Logout</a>
+                    </div>
+                </div>
+                   <button class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle me-3"
                     data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
-                <a href="sing.html"
-                    class="btn btn-primary rounded-pill d-inline-flex flex-shrink-0 py-2 px-4">Login/Register </a>
             </div>
         </nav>
         <!-- Header Start -->
         <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
-                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Water Campers</h4>
+                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Water Bottles</h4>
                 <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="water_camper.html">Water Campers</a></li>
+                    <li class="breadcrumb-item"><a href="#">water bottle</a></li>
                     <li class="breadcrumb-item active text-primary">Service</li>
                 </ol>
             </div>
@@ -145,7 +165,8 @@
                     <div class="position-relative mx-auto">
                         <input class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="text"
                             placeholder="Email address to Register ">
-                            <a href="sing.html"><button type="button" class="btn btn-secondary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Register</button></a>
+                        <a href="sing.html"><button type="button"
+                                class="btn btn-secondary rounded-pill position-absolute top-0 end-0 py-2 px-4 mt-2 me-2">Register</button></a>
                     </div>
                 </div>
                 <div class="col-lg-5">
@@ -173,7 +194,7 @@
                         <div class="position-relative">
                             <input class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="text"
                                 placeholder="Enter your email">
-                            <button type="button"
+                            <button type="button" onclick="sing.html"
                                 class="btn btn-secondary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">Sign
                                 In </button>
                         </div>
@@ -199,7 +220,7 @@
                         <a href="mailto:info@example.com"><i class="fas fa-envelope me-2"></i>
                             en22ca301036@medicaps.ac.in</a>
                         <a href="#"><i class="fas fa-phone me-2"></i> +919294868008</a>
-                        <a href="#" class="mb-3"><i class="fas fa-print me-2"></i> +919294868008</a>
+                        <a href="#" class="mb-3"><i class="fas fa-print me-2"></i> +916263949084</a>
                     </div>
                 </div>
             </div>
@@ -239,11 +260,11 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
 
 
-    <!-- Javascript -->
+    <!--  Javascript -->
     <script src="js/main.js"></script>
+    <script src="js/bottle_products.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/bottle.js"></script>
-    <script src="js/camper_products.js"></script>
 </body>
 
 </html>

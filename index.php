@@ -3,14 +3,14 @@ session_start(); // Start the session
 
 // Check if session exists (user is logged in)
 if (!isset($_SESSION['email'])) {
-    header("Location: sing.html"); // Redirect to login page if not logged in
+    header("Location: index.html"); // Redirect to login page if not logged in
     exit();
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
- 
+
 <head>
     <meta charset="utf-8">
     <title>Jal Wala</title>
@@ -68,8 +68,8 @@ if (!isset($_SESSION['email'])) {
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
-                    <a href="water_bottle.html" class="nav-item nav-link">Water Bottles</a>
+                    <a href="index.php" class="nav-item nav-link active">Home</a>
+                    <a href="water_bottle.php" class="nav-item nav-link">Water Bottles</a>
                     <a href="water_camper.html" class="nav-item nav-link">Water Campers</a>
                     <a href="water_tanker.html" class="nav-item nav-link">Water Tankers</a>
 
@@ -78,31 +78,7 @@ if (!isset($_SESSION['email'])) {
                         <span>Become a Seller</span>
                     </a>
 
-                    <div class="nav-item dropdown">
-                        <!-- <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a> -->
-                        <button class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
-                            <i class="fas fa-user"></i>
-                            
-                            <?php if (isset($_SESSION["email"])): ?>
-         <?php echo htmlspecialchars($_SESSION["email"]); ?>
-        
-    <?php else: ?>
-        <p>Welcome, Guest!</p>
-        <a href="login.php">Please login</a>
-    <?php endif;?>
 
-
-
-                            </span>
-                        </button>
-                        <div class="dropdown-menu m-0">
-                            <a href="profile.php">Profile</a>
-                            <a href="order.html">Orders</a>
-                            <a href="wishlist.php">Wishlist</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="logout.php">Logout</a>
-                        </div>
-                    </div>
 
                     <div class="nav-item dropdown cart-dropdown ">
                         <button class="dropdown-toggle nav-link" id="cartButton">
@@ -118,22 +94,48 @@ if (!isset($_SESSION['email'])) {
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu m-0">
-                            <a href="feature.html" class="dropdown-item">Our Feature</a>
-                            <a href="product.html" class="dropdown-item">Our Product</a>
-                            <a href="team.html" class="dropdown-item">Our Team</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="blog.html" class="dropdown-item">Blog</a>
-                            <a href="about.html" class="dropdown-item">About</a>
-                            <a href="contact.html" class="dropdown-item">Contact</a>
+                            <a href="feature.php" class="dropdown-item">Our Feature</a>
+                            <a href="product.php" class="dropdown-item">Our Product</a>
+                            <a href="team.php" class="dropdown-item">Our Team</a>
+                            <a href="testimonial.php" class="dropdown-item">Testimonial</a>
+                            <a href="blog.php" class="dropdown-item">Blog</a>
+                            <a href="about.php" class="dropdown-item">About</a>
+                            <a href="contact.php" class="dropdown-item">Contact</a>
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle me-3"
+             
+
+                <div class="nav-item dropdown">
+                    <button style="color: white;" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                        <i class="fas fa-user"></i>
+
+                        <?php if (isset($_SESSION["email"])): ?>
+                            <?php echo htmlspecialchars($_SESSION["email"]); ?>
+
+                        <?php else: ?>
+                            <p>Welcome, Guest!</p>
+                            <a href="login.php">Please login</a>
+                        <?php endif; ?>
+
+
+
+                        </span>
+                    </button>
+                    <div class="dropdown-menu m-0">
+                        <a href="profile.php">Profile</a>
+                        <a href="order.html">Orders</a>
+                        <a href="wishlist.php">Wishlist</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="logout.php">Logout</a>
+                    </div>
+                </div>
+                   <button class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle me-3"
                     data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
-                <a href="sing.html"
-                    class="btn btn-primary rounded-pill d-inline-flex flex-shrink-0 py-2 px-4">Login/Register </a>
             </div>
         </nav>
+
+
         <!-- Carousel Start -->
         <div class="carousel-header">
             <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
@@ -159,13 +161,13 @@ if (!isset($_SESSION['email'])) {
                                 <div class="carousel-caption-1-content-btn fadeInLeft animated"
                                     data-animation="fadeInLeft" data-delay="1.7s" style="animation-delay: 1.7s;">
                                     <a class="btn btn-primary rounded-pill flex-shrink-0 py-3 px-5 me-2"
-                                        href="sing.html">Order Now</a>
+                                        href="water_camper.php">Order Now</a>
                                     <a class="btn btn-secondary rounded-pill flex-shrink-0 py-3 px-5 ms-2"
-                                        href="water_tanker.html">Tankers</a>
+                                        href="water_tanker.php">Tankers</a>
                                     <a class="btn btn-secondary rounded-pill flex-shrink-0 py-3 px-5 ms-2"
-                                        href="water_camper.html">Campers</a>
+                                        href="water_camper.php">Campers</a>
                                     <a class="btn btn-secondary rounded-pill flex-shrink-0 py-3 px-5 ms-2"
-                                        href="water_bottle.html">Bottles</a>
+                                        href="water_bottle.php">Bottles</a>
                                 </div>
                             </div>
                         </div>
@@ -187,13 +189,13 @@ if (!isset($_SESSION['email'])) {
                                 <div class="carousel-caption-2-content-btn fadeInRight animated"
                                     data-animation="fadeInRight" data-delay="1.7s" style="animation-delay: 1.7s;">
                                     <a class="btn btn-primary rounded-pill flex-shrink-0 py-3 px-5 me-2"
-                                        href="sing.html">Order Now</a>
+                                        href="water_tanker.php">Order Now</a>
                                     <a class="btn btn-secondary rounded-pill flex-shrink-0 py-3 px-5 ms-2"
-                                        href="water_tanker.html">Tankers</a>
+                                        href="water_tanker.php">Tankers</a>
                                     <a class="btn btn-secondary rounded-pill flex-shrink-0 py-3 px-5 ms-2"
-                                        href="water_camper.html">Campers</a>
+                                        href="water_camper.php">Campers</a>
                                     <a class="btn btn-secondary rounded-pill flex-shrink-0 py-3 px-5 ms-2"
-                                        href="water_bottle.html">Bottles</a>
+                                        href="water_bottle.php">Bottles</a>
                                 </div>
                             </div>
                         </div>
@@ -254,7 +256,7 @@ if (!isset($_SESSION['email'])) {
                             <p>1000L Tanker</p>
                             <a href="#" class="h4 d-inline-block mb-3">Home use water</a>
                             <p class="fs-4 text-primary mb-3">₹500</p>
-                            <a href="water_tanker.html" class="btn btn-secondary rounded-pill py-2 px-4">Read More</a>
+                            <a href="water_tanker.php" class="btn btn-secondary rounded-pill py-2 px-4">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -265,7 +267,7 @@ if (!isset($_SESSION['email'])) {
                             <p>20L Campers</p>
                             <a href="#" class="h4 d-inline-block mb-3">RO Camper Service</a>
                             <p class="fs-4 text-primary mb-3">₹50 Day</p>
-                            <a href="water_camper.html" class="btn btn-secondary rounded-pill py-2 px-4">Read More</a>
+                            <a href="water_camper.php" class="btn btn-secondary rounded-pill py-2 px-4">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -276,7 +278,7 @@ if (!isset($_SESSION['email'])) {
                             <p>6L 3 Bottles</p>
                             <a href="#" class="h4 d-inline-block mb-3">UV Water Bottle</a>
                             <p class="fs-4 text-primary mb-3">₹100 </p>
-                            <a href="water_bottle.html" class="btn btn-secondary rounded-pill py-2 px-4">Read More</a>
+                            <a href="water_bottle.php" class="btn btn-secondary rounded-pill py-2 px-4">Read More</a>
                         </div>
                     </div>
                 </div>
@@ -400,7 +402,7 @@ if (!isset($_SESSION['email'])) {
                                 </div>
                             </div>
                         </div>
-                        <a href="#" class="btn btn-secondary rounded-pill py-3 px-5">Read More</a>
+                        <a href="about.php" class="btn btn-secondary rounded-pill py-3 px-5">Read More</a>
                     </div>
                 </div>
             </div>
@@ -610,7 +612,7 @@ if (!isset($_SESSION['email'])) {
                             <p>With technological advancements, water tanker services are becoming more efficient and
                                 sustainable. Smart water management systems, GPS tracking, and IoT-based monitoring help
                                 optimize water distribution, ensuring fair pricing and efficient delivery.</p>
-                            <a href="water_tanker.html" class="fw-bold text-secondary">Read More <i
+                            <a href="water_tanker.php" class="fw-bold text-secondary">Read More <i
                                     class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
@@ -627,7 +629,7 @@ if (!isset($_SESSION['email'])) {
                                 in remote areas, outdoor events, and adventure trips. These compact and easy-to-use
                                 units are designed to ensure access to clean and safe drinking water wherever needed.
                             </p>
-                            <a href="water_camper.html" class="fw-bold text-secondary">Read More <i
+                            <a href="water_camper.php" class="fw-bold text-secondary">Read More <i
                                     class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
@@ -646,7 +648,7 @@ if (!isset($_SESSION['email'])) {
                                 work, school, travel, or outdoor activities. With a variety of designs and features
                                 available, they provide a practical and eco-conscious solution for carrying water
                                 conveniently.</p>
-                            <a href="water_bottle.html" class="fw-bold text-secondary">Read More <i
+                            <a href="water_bottle.php" class="fw-bold text-secondary">Read More <i
                                     class="fa fa-angle-right"></i></a>
                         </div>
                     </div>
@@ -787,9 +789,9 @@ if (!isset($_SESSION['email'])) {
                         <div class="position-relative">
                             <input class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="text"
                                 placeholder="Enter your email">
-                            <button type="button"
-                                class="btn btn-secondary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">Sign
-                                In </button>
+                           
+                            <a  href="sing.html" class="btn btn-secondary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">Sign 
+                                In </a> 
                         </div>
                     </div>
                 </div>
