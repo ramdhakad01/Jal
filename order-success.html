@@ -26,7 +26,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Get order data from localStorage
             const orderData = JSON.parse(localStorage.getItem('orderData'));
-            
+    
             // Display order ID
             document.getElementById('order-id-display').textContent = orderData.orderId;
         });
@@ -37,11 +37,7 @@
         
         function continueShopping() {
             // Redirect to home page or shop page
-<<<<<<< Updated upstream
             window.location.href = 'index.php';
-=======
-            window.location.href = 'index.html';
->>>>>>> Stashed changes
         }
     </script>
 </body>
