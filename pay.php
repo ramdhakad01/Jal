@@ -4,7 +4,6 @@ include 'confige.php';
 
 // Total amount from URL
 $amount = isset($_GET['total']) ? floatval($_GET['total']) : 0.00;
-$product_ids = $_GET['products'] ?? '';
 
 // UPI Payment Details
 $upi_id = "6263949084@ybl"; 
@@ -104,9 +103,6 @@ $qr_code = "https://quickchart.io/qr?text=" . urlencode($payment_url) . "&size=3
             <label>Enter Transaction ID:</label><br>
             <input type="hidden" name="amount" value="<?= $amount ?>">
             <input type="text" name="transaction_id" id="transaction_id" required placeholder="Enter UPI Transaction ID">
-            <!-- Hidden fields -->
-    <input type="hidden" name="amount" value="<?= htmlspecialchars($amount) ?>">
-    <input type="hidden" name="product_ids" value="<?= htmlspecialchars($product_ids) ?>">
             <button type="submit">Confirm Payment</button>
         </form>
     </div>

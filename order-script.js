@@ -1,4 +1,5 @@
-// Global variables to store order data
+ 
+ // Global variables to store order data
 const orderData = {
     customer: {
       firstName: "",
@@ -17,10 +18,18 @@ const orderData = {
     paymentMethod: "cod",
     items: [
       {
+<<<<<<< Updated upstream
         name: "Acus bottle",
         price: 179,
         quantity: 1,
         image:"img\acua-bottle1l.jpg",
+=======
+        name: "Aerodynamic linen bag",
+        price: 179,
+        quantity: 1,
+        image:
+          "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-04-22%20093143-qbUvAMm5hd946CY1bRiCAeqmdsj9AF.png",
+>>>>>>> Stashed changes
       },
     ],
     shippingCost: 0,
@@ -82,13 +91,13 @@ const orderData = {
         break
       case 2:
         currentSection = "shipping-content"
-        break
-      case 3:
-        currentSection = "method-content"
-        break
-      case 4:
-        currentSection = "payment-content"
-        break
+      //   break
+      // case 3:
+      //   currentSection = "method-content"
+      //   break
+      // case 4:
+      //   currentSection = "payment-content"
+      //   break
     }
   
     document.getElementById(currentSection).style.display = "block"
@@ -181,7 +190,11 @@ const orderData = {
   
     // Update shipping cost based on delivery method
     if (orderData.deliveryMethod === "express") {
+<<<<<<< Updated upstream
       orderData.shippingCost = 40
+=======
+      orderData.shippingCost = 10
+>>>>>>> Stashed changes
     } else {
       orderData.shippingCost = 0
     }
@@ -213,7 +226,15 @@ const orderData = {
     // Calculate subtotal based on item quantity
     const itemPrice = orderData.items[0].price
     const quantity = orderData.items[0].quantity
+<<<<<<< HEAD
+    const subtotal = cartTotal
+=======
+<<<<<<< Updated upstream
+    const subtotal = CartTotal
+=======
     const subtotal = itemPrice * quantity
+>>>>>>> Stashed changes
+>>>>>>> b29f7374511b1a633e2ea4a667f2f6b9570c5c70
   
     // Update order data
     orderData.subtotal = subtotal
@@ -244,6 +265,7 @@ const orderData = {
     // Redirect to order success page
     window.location.href = "order-success.html"
   }
+<<<<<<< Updated upstream
 
 
 
@@ -298,7 +320,7 @@ const orderData = {
                 </div>
                 <div class="price-row total">
                     <span>Sub-total</span>
-                    <span id="sub-total">₹${total.toFixed(2)}</span>
+                    <span id="sub-total">₹${formatPrice(cartTotal)}</span>
                 </div>
             </div>
         </div>
@@ -307,4 +329,6 @@ const orderData = {
     app.innerHTML = summaryHTML;
 }
 
+=======
+>>>>>>> Stashed changes
   
