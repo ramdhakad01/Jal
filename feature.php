@@ -1,3 +1,12 @@
+<?php
+session_start(); // Start the session
+
+// Check if session exists (user is logged in)
+if (!isset($_SESSION['email'])) {
+    header("Location: index.html"); // Redirect to login page if not logged in
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +53,7 @@
         </div>
     </div>
     <!-- Spinner End -->
-
+    
     <!-- Navbar & Hero Start -->
     <div class="container-fluid position-relative p-0">
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
@@ -58,30 +67,17 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="index.php" class="nav-item nav-link">Home</a>
-                    <a href="water_bottle.html" class="nav-item nav-link">Water Bottles</a>
-                    <a href="water_camper.html" class="nav-item nav-link">Water Campers</a>
-                    <a href="water_tanker.html" class="nav-item nav-link active">Water Tankers</a>
+                    <a href="index.php" class="nav-item nav-link ">Home</a>
+                    <a href="water_bottle.php" class="nav-item nav-link ">Water Bottles</a>
+                    <a href="water_camper.php" class="nav-item nav-link ">Water Campers</a>
+                    <a href="water_tanker.php" class="nav-item nav-link">Water Tankers</a>
 
-                    <a href="become-seller.php" class=" nav-item nav-link">
+                    <a href="registration.html" class=" nav-item nav-link">
                         <i class="fas fa-store"></i>
                         <span>Become a Seller</span>
                     </a>
 
-                    <div class="nav-item dropdown">
-                        <!-- <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a> -->
-                        <button class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
-                            <i class="fas fa-user"></i>
-                            <span class="dropdown-text">Guest</span>
-                        </button>
-                        <div class="dropdown-menu m-0">
-                            <a href="profile.php">Profile</a>
-                            <a href="orders.php">Orders</a>
-                            <a href="wishlist.php">Wishlist</a>
-                            <div class="dropdown-divider"></div>
-                            <a href="logout.php">Logout</a>
-                        </div>
-                    </div>
+
 
                     <div class="nav-item dropdown cart-dropdown ">
                         <button class="dropdown-toggle nav-link" id="cartButton">
@@ -94,33 +90,57 @@
                         </div>
                     </div>
 
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                    <div class="nav-item dropdown active">
+                        <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">Pages</a>
                         <div class="dropdown-menu m-0">
-                            <a href="feature.html" class="dropdown-item">Our Feature</a>
-                            <a href="product.html" class="dropdown-item">Our Product</a>
-                            <a href="team.html" class="dropdown-item">Our Team</a>
-                            <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                            <a href="blog.html" class="dropdown-item">Blog</a>
-                            <a href="about.html" class="dropdown-item">About</a>
-                            <a href="contact.html" class="dropdown-item">Contact</a>
+                            <a href="feature.php" class="dropdown-item">Our Feature</a>
+                            <a href="product.php" class="dropdown-item">Our Product</a>
+                            <a href="team.php" class="dropdown-item">Our Team</a>
+                            <a href="testimonial.php" class="dropdown-item">Testimonial</a>
+                            <a href="blog.php" class="dropdown-item">Blog</a>
+                            <a href="about.php" class="dropdown-item">About</a>
+                            <a href="contact.php" class="dropdown-item">Contact</a>
                         </div>
                     </div>
                 </div>
-                <button class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle me-3"
+             
+
+                <div class="nav-item dropdown">
+                    <button style="color: white;" class="dropdown-toggle nav-link" data-bs-toggle="dropdown">
+                        <i class="fas fa-user"></i>
+
+                        <?php if (isset($_SESSION["email"])): ?>
+                            <?php echo htmlspecialchars($_SESSION["email"]); ?>
+
+                        <?php else: ?>
+                            <p>Welcome, Guest!</p>
+                            <a href="login.php">Please login</a>
+                        <?php endif; ?>
+
+
+
+                        </span>
+                    </button>
+                    <div class="dropdown-menu m-0">
+                        <a href="profile.php">Profile</a>
+                        <a href="order.html">Orders</a>
+                        <a href="wishlist.php">Wishlist</a>
+                        <div class="dropdown-divider"></div>
+                        <a href="logout.php">Logout</a>
+                    </div>
+                </div>
+                   <button class="btn btn-primary btn-md-square d-flex flex-shrink-0 mb-3 mb-lg-0 rounded-circle me-3"
                     data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fas fa-search"></i></button>
-                <a href="sing.html"
-                    class="btn btn-primary rounded-pill d-inline-flex flex-shrink-0 py-2 px-4">Login/Register </a>
             </div>
-        </nav>
+        </nav>            <!-- Header Start -->
         <!-- Header Start -->
         <div class="container-fluid bg-breadcrumb">
             <div class="container text-center py-5" style="max-width: 900px;">
-                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Water Tankers</h4>
+                <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Our Features</h4>
                 <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="water_tanker.html">Water Tankers</a></li>
-                    <li class="breadcrumb-item active text-primary">Service</li>
+                    <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                    <li class="breadcrumb-item active text-primary">Feature</li>
                 </ol>
             </div>
         </div>
@@ -128,14 +148,82 @@
     </div>
     <!-- Navbar & Hero End -->
 
-    <!-- container start -->
-    <main class="container">
-        <!-- <h1 class="page-title">Products</h1> -->
-
-        <div class="products-grid" id="productsGrid">
-            <!-- Products will be loaded here via JavaScript -->
+    <!-- Modal Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h4 class="modal-title mb-0" id="exampleModalLabel">Search by keyword</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center">
+                    <div class="input-group w-75 mx-auto d-flex">
+                        <input type="search" class="form-control p-3" placeholder="keywords"
+                            aria-describedby="search-icon-1">
+                        <span id="search-icon-1" class="input-group-text btn border p-3"><i
+                                class="fa fa-search text-white"></i></span>
+                    </div>
+                </div>
+            </div>
         </div>
-    </main>
+    </div>
+    <!-- Modal Search End -->
+
+        <!-- feature Start -->
+        <div class="container-fluid feature bg-light py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-uppercase text-primary">Our Feature</h4>
+                    <h1 class="display-3 text-capitalize mb-3">Water Bottles -> Water Campers -> Water Tankers</h1>
+                </div>
+                <div class="row g-4">
+                    <div class=" col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="feature-item p-4">
+                            <div class="feature-icon mb-3"><i class="fas fa-hand-holding-water text-white fa-3x"></i></div>
+                            <a href="#" class="h4 mb-3">Quality Check</a>
+                            <p class="mb-3">At Jal Wala, monitors every drop using advanced testing protocols. This meets
+                                the highest standards of purity, safety, and the perfect mineral
+                                balance.
+                            </p>
+                            <a href="#" class="btn text-secondary">Read More <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="feature-item p-4">
+                            <div class="feature-icon mb-3"><i class="fas fa-filter text-white fa-3x"></i></div>
+                            <a href="#" class="h4 mb-3">5 Steps Filtration</a>
+                            <p class="mb-3">Jal wala ensures pure water by removing sediments, odors, contaminants,
+                                pathogens, and enhancing taste for safe and clean drinking water.</p>
+                            <a href="#" class="btn text-secondary">Read More <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="feature-item p-4">
+                            <div class="feature-icon mb-3"><i class="fas fa-recycle text-white fa-3x"></i></div>
+                            <a href="#" class="h4 mb-3">Customer-Centric Approach</a>
+                            <p class="mb-3">
+                                Pure refreshment in every drop.
+                                Advanced filtration removes all impurities.    
+                                Jal Wala delivers quality water you can trust.
+                            </p>
+                            <a href="#" class="btn text-secondary">Read More <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="feature-item p-4">
+                            <div class="feature-icon mb-3"><i class="fas fa-microscope text-white fa-3x"></i></div>
+                            <a href="#" class="h4 mb-3">Purity Guaranteed</a>
+                            <p class="mb-3"> Advanced filtration removes all impurities.
+                                Balanced with essential minerals for optimal hydration. Jal Wala delivers safe, quality
+                                water you can trust.</p>
+                            <a href="#" class="btn text-secondary">Read More <i class="fa fa-angle-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- feature End -->
+
 
     <!-- Footer Start -->
     <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
@@ -224,7 +312,6 @@
     <!-- Copyright End -->
 
 
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-secondary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
 
@@ -243,7 +330,6 @@
     <script src="js/main.js"></script>
     <script src="js/cart.js"></script>
     <script src="js/bottle.js"></script>
-    <script src="js/tanker_products.js"></script>
 </body>
 
 </html>
