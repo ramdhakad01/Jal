@@ -125,7 +125,7 @@ if (!isset($_SESSION['email'])) {
                     <div class="dropdown-menu m-0">
                         <a href="profile.php">Profile</a>
                         <a href="order.html">Orders</a>
-                        <a href="wishlist.php">Wishlist</a>
+                        <a href="change.php">Change Password</a>
                         <div class="dropdown-divider"></div>
                         <a href="logout.php">Logout</a>
                     </div>

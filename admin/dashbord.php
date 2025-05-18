@@ -1,5 +1,5 @@
 <?php
-session_start();
+
 include("confige.php"); // This should contain your DB connection as $conn
 
 // Fetch orders by joining transaction_data and registration_user
@@ -395,10 +395,10 @@ if (isset($_GET['id'])) {
                 </h1>
                 <div class="user-info">
                     <div class="user-avatar">
-                        <?php echo substr($_SESSION['user']['name'], 0, 1); ?>
+                       
                     </div>
                     <!-- <div class="user-name">
-                        <?php echo $_SESSION['user']['name']; ?>
+                     
                     </div> -->
                 </div>
             </div>
