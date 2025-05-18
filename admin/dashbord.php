@@ -2,30 +2,8 @@
 
 include("confige.php"); // This should contain your DB connection as $conn
 
-// Fetch orders by joining transaction_data and registration_user
-// $sql = "SELECT t.transaction_id, t.amount, t.product_ids, t.username, t.created_at, r.phone, r.name 
-//         FROM transaction_data t
-//         JOIN registration_user r ON t.username = r.email
-//         ORDER BY t.created_at DESC";
-        
 
-// $result = $conn->query($sql);
-// $orders = [];
 
-// if ($result && $result->num_rows > 0) {
-//     while ($row = $result->fetch_assoc()) {
-//         $orders[] = [
-//             'id' => $row['transaction_id'],
-//             'customer' => $row['name'],
-//             'amount' =>  '₹' . $row['amount'],
-//             'date' => $row['created_at'],
-//             'phone' => $row['phone']
-//         ];
-//     }
-// }
-
-// $page = isset($_GET['page']) ? $_GET['page'] : 'home';
-//   $totalOrders = 0;
 $countQuery = "SELECT COUNT(*) as total FROM transaction_data";
 $countResult = $conn->query($countQuery);
 if ($countResult && $row = $countResult->fetch_assoc()) {
