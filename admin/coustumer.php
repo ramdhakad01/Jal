@@ -88,6 +88,6 @@ if ($result && $result->num_rows > 0) {
             </tbody>
         </table>
     </div>
-    <a href="dashboard.php" class="back-link"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
+    <a href="dashbord.php" class="back-link"><i class="fas fa-arrow-left"></i> Back to Dashboard</a>
 </body>
 </html>
